@@ -4,6 +4,6 @@
 
 module.exports = {
     index: function (require, response, next) {
-        response.render('index', {title: 'Mi proyecto de software'});
+        response.render('login/login');
     }
 };
