@@ -3,7 +3,7 @@
  */
 
 module.exports = {
-    index: function (require, response, next) {
-        response.render('login/login');
+    index: function (request, response, next) {
+        response.render('usuario/login');
     }
 };

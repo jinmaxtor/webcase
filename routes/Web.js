@@ -11,4 +11,6 @@ router.get('/', function(req, res, next) {
 
 router.get('/', controllers.HomeController.index);
 
+router.get('/registrar', controllers.UserController.registrar);
+
 module.exports = router;

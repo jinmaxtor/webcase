@@ -32,8 +32,7 @@ html.loading(lang='es', data-textdirection='ltr')
         // BEGIN Custom CSS
         link(rel='stylesheet', type='text/css', href='./stylesheets/style.css')
         // END Custom CSS
-    body.vertical-layout.vertical-menu-modern.1-column.menu-expanded.blank-page.blank-page(data-open='click', data-menu='vertical-menu-modern', data-col='1-column')
-    // ////////////////////////////////////////////////////////////////////////////
+    body.vertical-layout.vertical-menu-modern.menu-expanded.blank-page.blank-page(data-open='click', data-menu='vertical-menu-modern', data-col='1-column')
     .app-content.content.container-fluid
         .content-wrapper
             .content-header.row
@@ -44,38 +43,37 @@ html.loading(lang='es', data-textdirection='ltr')
                             .card-header.no-border
                                 .card-title.text-xs-center
                                     .p-1
-                                        img(src='../../../app-assets/images/logo/stack-logo-dark.png', alt='branding logo')
+                                        img(src='/app-assets/images/logo/logo_principal.png', alt='branding logo')
                                 h6.card-subtitle.line-on-side.text-muted.text-xs-center.font-small-3.pt-2
-                                    span Login with Stack
+                                    span Inicie sesión en WebCASE
                             .card-body.collapse.in
                                 .card-block
                                     form.form-horizontal.form-simple(action='https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/html/ltr/vertical-modern-menu-template/index.html', novalidate='')
                                         fieldset.form-group.position-relative.has-icon-left.mb-0
-                                            input#user-name.form-control.form-control-lg.input-lg(type='text', placeholder='Your Username', required='')
+                                            input#user-name.form-control.form-control-lg.input-lg(type='text', placeholder='Nombre de usuario', required='')
                                             .form-control-position
                                                 i.ft-user
                                         fieldset.form-group.position-relative.has-icon-left
-                                            input#user-password.form-control.form-control-lg.input-lg(type='password', placeholder='Enter Password', required='')
+                                            input#user-password.form-control.form-control-lg.input-lg(type='password', placeholder='Contraseña', required='')
                                             .form-control-position
                                                 i.fa.fa-key
                                         fieldset.form-group.row
                                             .col-md-6.col-xs-12.text-xs-center.text-md-left
                                                 fieldset
                                                     input#remember-me.chk-remember(type='checkbox')
-                                                    label(for='remember-me')  Remember Me
+                                                    label(for='remember-me') Recordárme
                                             .col-md-6.col-xs-12.text-xs-center.text-md-right
-                                                a.card-link(href='recover-password.html') Forgot Password?
+                                                a.card-link(href='recover-password.html') Olvidó su contraseña?
                                         button.btn.btn-primary.btn-lg.btn-block(type='submit')
                                             i.ft-unlock
-                                            |  Login
+                                            |  Iniciar Sesión
                             .card-footer
                                 div
                                     p.float-sm-left.text-xs-center.m-0
-                                        a.card-link(href='recover-password.html') Recover password
+                                        a.card-link(href='recover-password.html') Recuperar contraseña
                                     p.float-sm-right.text-xs-center.m-0
-                                        | New to Stack?
-                                        a.card-link(href='register-simple.html') Sign Up
-    // ////////////////////////////////////////////////////////////////////////////
+                                        | Eres nuevo?
+                                        a.card-link(href='register-simple.html') Registrate
     // BEGIN VENDOR JS
     script(src='/app-assets/vendors/js/vendors.min.js', type='text/javascript')
     // BEGIN VENDOR JS
@@ -86,7 +84,6 @@ html.loading(lang='es', data-textdirection='ltr')
     // BEGIN STACK JS
     script(src='/app-assets/js/core/app-menu.min.js', type='text/javascript')
     script(src='/app-assets/js/core/app.min.js', type='text/javascript')
-    script(src='/app-assets/js/scripts/customizer.min.js', type='text/javascript')
     // END STACK JS
     // BEGIN PAGE LEVEL JS
     script(src='/app-assets/js/scripts/forms/form-login-register.min.js', type='text/javascript')
