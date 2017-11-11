@@ -30,7 +30,7 @@ html.loading(lang='es', data-textdirection='ltr')
         link(rel='stylesheet', type='text/css', href='/app-assets/css/pages/login-register.min.css')
         // END Page Level CSS
         // BEGIN Custom CSS
-        link(rel='stylesheet', type='text/css', href='./stylesheets/style.css')
+        link(rel='stylesheet', type='text/css', href='./css/style.css')
         // END Custom CSS
     body.vertical-layout.vertical-menu-modern.menu-expanded.blank-page.blank-page(data-open='click', data-menu='vertical-menu-modern', data-col='1-column')
     .app-content.content.container-fluid
@@ -41,6 +41,8 @@ html.loading(lang='es', data-textdirection='ltr')
                     .col-md-4.offset-md-4.col-xs-10.offset-xs-1.box-shadow-2.p-0
                         .card.border-grey.border-lighten-3.m-0
                             .card-header.no-border
+                                if message.length > 0
+                                    .alert.alert-success(role='alert')=message
                                 .card-title.text-xs-center
                                     .p-1
                                         img(src='/app-assets/images/logo/logo_principal.png', alt='branding logo')
@@ -73,7 +75,7 @@ html.loading(lang='es', data-textdirection='ltr')
                                         a.card-link(href='recover-password.html') Recuperar contraseña
                                     p.float-sm-right.text-xs-center.m-0
                                         | Eres nuevo?
-                                        a.card-link(href='register-simple.html') Registrate
+                                        a.card-link(href='/registrar') Registrate
     // BEGIN VENDOR JS
     script(src='/app-assets/vendors/js/vendors.min.js', type='text/javascript')
     // BEGIN VENDOR JS

@@ -11,6 +11,8 @@ router.get('/', function(req, res, next) {
 
 router.get('/', controllers.HomeController.index);
 
-router.get('/registrar', controllers.UserController.registrar);
+router.get('/login', controllers.UserController.login);
+router.get('/registrar', controllers.UserController.index);
+router.post('/registrar', controllers.UserController.store);
 
 module.exports = router;

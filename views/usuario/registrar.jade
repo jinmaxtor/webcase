@@ -29,7 +29,7 @@ html.loading(lang='en', data-textdirection='ltr')
         link(rel='stylesheet', type='text/css', href='/app-assets/css/pages/login-register.min.css')
         // END Page Level CSS
         // BEGIN Custom CSS
-        link(rel='stylesheet', type='text/css', href='/stylesheets/style.css')
+        link(rel='stylesheet', type='text/css', href='/css/style.css')
         // END Custom CSS
     body.vertical-layout.vertical-menu-modern.menu-expanded.blank-page.blank-page(data-open='click', data-menu='vertical-menu-modern', data-col='1-column')
     .app-content.content.container-fluid
@@ -43,28 +43,28 @@ html.loading(lang='en', data-textdirection='ltr')
                                 .card-title.text-xs-center
                                     img(src='/app-assets/images/logo/logo_principal.png', alt='branding logo')
                                 h6.card-subtitle.line-on-side.text-muted.text-xs-center.font-small-3.pt-2
-                                    span Create Account
+                                    span Crear una cuenta
                             .card-body.collapse.in
                                 .card-block
-                                    form.form-horizontal.form-simple(action='https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/html/ltr/vertical-modern-menu-template/index.html', novalidate='')
+                                    form.form-horizontal.form-simple(action='http://localhost/registrar', method='post')
                                         fieldset.form-group.position-relative.has-icon-left.mb-1
-                                            input#user-name.form-control.form-control-lg.input-lg(type='text', placeholder='User Name')
+                                            input#user-name.form-control.form-control-lg.input-lg(type='text', name='user', placeholder='Nombre de usuario')
                                             .form-control-position
                                                 i.ft-user
                                         fieldset.form-group.position-relative.has-icon-left.mb-1
-                                            input#user-email.form-control.form-control-lg.input-lg(type='email', placeholder='Your Email Address', required='')
+                                            input#user-email.form-control.form-control-lg.input-lg(type='email', name='email', placeholder='Correo electrónico', required='')
                                             .form-control-position
                                                 i.ft-mail
                                         fieldset.form-group.position-relative.has-icon-left
-                                            input#user-password.form-control.form-control-lg.input-lg(type='password', placeholder='Enter Password', required='')
+                                            input#user-password.form-control.form-control-lg.input-lg(type='password', name='password', placeholder='Contraseña', required='')
                                             .form-control-position
                                                 i.fa.fa-key
                                         button.btn.btn-primary.btn-lg.btn-block(type='submit')
                                             i.ft-unlock
-                                            |  Register
+                                            |  Registrarse
                                 p.text-xs-center
-                                    | Already have an account ?
-                                    a.card-link(href='login-simple.html') Login
+                                    | Ya esta registrado?
+                                    a.card-link(href='/login') Iniciar sesión
     // BEGIN VENDOR JS
     script(src='/app-assets/vendors/js/vendors.min.js', type='text/javascript')
     // BEGIN VENDOR JS

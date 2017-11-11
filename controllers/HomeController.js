@@ -4,6 +4,6 @@
 
 module.exports = {
     index: function (request, response, next) {
-        response.render('usuario/login');
+        response.render('home');
     }
 };

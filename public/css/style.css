@@ -1,0 +1,11 @@
+#nav-mobile{
+    background-color: #333333;
+}
+
+#nav-mobile a {
+    color: white;
+}
+
+#nav-mobile li:hover {
+    background-color: orange;
+}
