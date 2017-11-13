@@ -1,0 +1,324 @@
+.customizer.border-left-blue-grey.border-left-lighten-4.hidden-lg-down
+    a.customizer-close(href='#')
+        i.ft-x.font-medium-3
+    a.customizer-toggle.bg-danger(href='#')
+        i.ft-settings.font-medium-3.fa-spin.fa.fa-spin.fa-fw.white
+    .customizer-content.p-2
+        h4.text-uppercase.mb-0 Theme Customizer
+        hr
+        p Customize & Preview in Real Time
+        h5.mt-1 Layout Options
+        ul.nav.nav-tabs.nav-underline.nav-justified.layout-options
+            li.nav-item
+                a#baseIcon-tab21.nav-link.layouts.active(data-toggle='tab', aria-controls='tabIcon21', href='#tabIcon21', aria-expanded='true') Layouts
+            li.nav-item
+                a#baseIcon-tab22.nav-link.navigation(data-toggle='tab', aria-controls='tabIcon22', href='#tabIcon22', aria-expanded='false') Navigation
+            li.nav-item
+                a#baseIcon-tab23.nav-link.navbar(data-toggle='tab', aria-controls='tabIcon23', href='#tabIcon23', aria-expanded='false') Navbar
+        .tab-content.px-1.pt-1
+            #tabIcon21.tab-pane.active(role='tabpanel', aria-expanded='true', aria-labelledby='baseIcon-tab21')
+                p
+                    label.display-inline-block.custom-control.custom-checkbox
+                        input#collapsed-sidebar.custom-control-input(type='checkbox', name='collapsed-sidebar')
+                        span.c-indicator.bg-primary.custom-control-indicator
+                        span.custom-control-description Collapsed Menu
+                p
+                    label.display-inline-block.custom-control.custom-checkbox
+                        input#fixed-layout.custom-control-input(type='checkbox', name='fixed-layout')
+                        span.c-indicator.bg-primary.custom-control-indicator
+                        span.custom-control-description Fixed Layout
+                p
+                    label.display-inline-block.custom-control.custom-checkbox
+                        input#boxed-layout.custom-control-input(type='checkbox', name='boxed-layout')
+                        span.c-indicator.bg-primary.custom-control-indicator
+                        span.custom-control-description Boxed Layout
+                p
+                    label.display-inline-block.custom-control.custom-checkbox
+                        input#static-layout.custom-control-input(type='checkbox', name='static-layout')
+                        span.c-indicator.bg-primary.custom-control-indicator
+                        span.custom-control-description Static Layout
+            #tabIcon22.tab-pane(aria-labelledby='baseIcon-tab22')
+                p
+                    label.display-inline-block.custom-control.custom-checkbox
+                        input#native-scroll.custom-control-input(type='checkbox', name='native-scroll')
+                        span.c-indicator.bg-primary.custom-control-indicator
+                        span.custom-control-description Native Scroll
+                p
+                    label.display-inline-block.custom-control.custom-checkbox
+                        input#right-side-icons.custom-control-input(type='checkbox', name='right-side-icons')
+                        span.c-indicator.bg-primary.custom-control-indicator
+                        span.custom-control-description Right Side Icons
+                p
+                    label.display-inline-block.custom-control.custom-checkbox
+                        input#bordered-navigation.custom-control-input(type='checkbox', name='bordered-navigation')
+                        span.c-indicator.bg-primary.custom-control-indicator
+                        span.custom-control-description Bordered Navigation
+                p
+                    label.display-inline-block.custom-control.custom-checkbox
+                        input#flipped-navigation.custom-control-input(type='checkbox', name='flipped-navigation')
+                        span.c-indicator.bg-primary.custom-control-indicator
+                        span.custom-control-description Flipped Navigation
+                p
+                    label.display-inline-block.custom-control.custom-checkbox
+                        input#collapsible-navigation.custom-control-input(type='checkbox', name='collapsible-navigation')
+                        span.c-indicator.bg-primary.custom-control-indicator
+                        span.custom-control-description Collapsible Navigation
+                p
+                    label.display-inline-block.custom-control.custom-checkbox
+                        input#static-navigation.custom-control-input(type='checkbox', name='static-navigation')
+                        span.c-indicator.bg-primary.custom-control-indicator
+                        span.custom-control-description Static Navigation
+            #tabIcon23.tab-pane(aria-labelledby='baseIcon-tab23')
+                p
+                    label.display-inline-block.custom-control.custom-checkbox
+                        input#brand-center.custom-control-input(type='checkbox', name='brand-center')
+                        span.c-indicator.bg-primary.custom-control-indicator
+                        span.custom-control-description Brand Center
+                p
+                    label.display-inline-block.custom-control.custom-checkbox
+                        input#navbar-static-top.custom-control-input(type='checkbox', name='navbar-static-top')
+                        span.c-indicator.bg-primary.custom-control-indicator
+                        span.custom-control-description Static Top
+        hr
+        h5.mt-1 Navigation Color Options
+        ul.nav.nav-tabs.nav-underline.nav-justified.color-options
+            li.nav-item
+                a#color-opt-1.nav-link.nav-semi-light.active(data-toggle='tab', aria-controls='clrOpt1', href='#clrOpt1', aria-expanded='false') Semi Light
+            li.nav-item
+                a#color-opt-2.nav-link.nav-semi-dark(data-toggle='tab', aria-controls='clrOpt2', href='#clrOpt2', aria-expanded='false') Semi Dark
+            li.nav-item
+                a#color-opt-3.nav-link.nav-dark(data-toggle='tab', aria-controls='clrOpt3', href='#clrOpt3', aria-expanded='false') Dark
+            li.nav-item
+                a#color-opt-4.nav-link.nav-light(data-toggle='tab', aria-controls='clrOpt4', href='#clrOpt4', aria-expanded='true') Light
+        .tab-content.px-1.pt-1
+            #clrOpt1.tab-pane.active(role='tabpanel', aria-expanded='true', aria-labelledby='color-opt-1')
+                .row
+                    .col-xs-6
+                        h6 Solid
+                        p
+                            label.display-inline-block.custom-control.custom-radio
+                                input.custom-control-input(type='radio', name='nav-slight-clr', data-bg='bg-blue-grey')
+                                span.bg-default.custom-control-indicator
+                                span.custom-control-description Default
+                        p
+                            label.display-inline-block.custom-control.custom-radio
+                                input.custom-control-input(type='radio', name='nav-slight-clr', data-bg='bg-primary')
+                                span.bg-primary.custom-control-indicator
+                                span.custom-control-description Primary
+                        p
+                            label.display-inline-block.custom-control.custom-radio
+                                input.custom-control-input(type='radio', name='nav-slight-clr', data-bg='bg-danger')
+                                span.bg-danger.custom-control-indicator
+                                span.custom-control-description Danger
+                        p
+                            label.display-inline-block.custom-control.custom-radio
+                                input.custom-control-input(type='radio', name='nav-slight-clr', data-bg='bg-success')
+                                span.bg-success.custom-control-indicator
+                                span.custom-control-description Success
+                        p
+                            label.display-inline-block.custom-control.custom-radio
+                                input.custom-control-input(type='radio', name='nav-slight-clr', data-bg='bg-blue')
+                                span.bg-blue.custom-control-indicator
+                                span.custom-control-description Blue
+                        p
+                            label.display-inline-block.custom-control.custom-radio
+                                input.custom-control-input(type='radio', name='nav-slight-clr', data-bg='bg-cyan')
+                                span.bg-cyan.custom-control-indicator
+                                span.custom-control-description Cyan
+                        p
+                            label.display-inline-block.custom-control.custom-radio
+                                input.custom-control-input(type='radio', name='nav-slight-clr', data-bg='bg-pink')
+                                span.bg-pink.custom-control-indicator
+                                span.custom-control-description Pink
+                    .col-xs-6
+                        h6 Gradient
+                        p
+                            label.display-inline-block.custom-control.custom-radio
+                                input.custom-control-input.default(type='radio', name='nav-slight-clr', checked='', data-bg='bg-gradient-x-grey-blue')
+                                span.bg-default.custom-control-indicator
+                                span.custom-control-description Default
+                        p
+                            label.display-inline-block.custom-control.custom-radio
+                                input.custom-control-input(type='radio', name='nav-slight-clr', data-bg='bg-gradient-x-primary')
+                                span.bg-primary.custom-control-indicator
+                                span.custom-control-description Primary
+                        p
+                            label.display-inline-block.custom-control.custom-radio
+                                input.custom-control-input(type='radio', name='nav-slight-clr', data-bg='bg-gradient-x-danger')
+                                span.bg-danger.custom-control-indicator
+                                span.custom-control-description Danger
+                        p
+                            label.display-inline-block.custom-control.custom-radio
+                                input.custom-control-input(type='radio', name='nav-slight-clr', data-bg='bg-gradient-x-success')
+                                span.bg-success.custom-control-indicator
+                                span.custom-control-description Success
+                        p
+                            label.display-inline-block.custom-control.custom-radio
+                                input.custom-control-input(type='radio', name='nav-slight-clr', data-bg='bg-gradient-x-blue')
+                                span.bg-blue.custom-control-indicator
+                                span.custom-control-description Blue
+                        p
+                            label.display-inline-block.custom-control.custom-radio
+                                input.custom-control-input(type='radio', name='nav-slight-clr', data-bg='bg-gradient-x-cyan')
+                                span.bg-cyan.custom-control-indicator
+                                span.custom-control-description Cyan
+                        p
+                            label.display-inline-block.custom-control.custom-radio
+                                input.custom-control-input(type='radio', name='nav-slight-clr', data-bg='bg-gradient-x-pink')
+                                span.bg-pink.custom-control-indicator
+                                span.custom-control-description Pink
+            #clrOpt2.tab-pane(aria-labelledby='color-opt-2')
+                p
+                    label.display-inline-block.custom-control.custom-radio
+                        input.custom-control-input.default(type='radio', name='nav-sdark-clr', checked='', data-bg='bg-default')
+                        span.bg-default.custom-control-indicator
+                        span.custom-control-description Default
+                p
+                    label.display-inline-block.custom-control.custom-radio
+                        input.custom-control-input(type='radio', name='nav-sdark-clr', data-bg='bg-primary')
+                        span.bg-primary.custom-control-indicator
+                        span.custom-control-description Primary
+                p
+                    label.display-inline-block.custom-control.custom-radio
+                        input.custom-control-input(type='radio', name='nav-sdark-clr', data-bg='bg-danger')
+                        span.bg-danger.custom-control-indicator
+                        span.custom-control-description Danger
+                p
+                    label.display-inline-block.custom-control.custom-radio
+                        input.custom-control-input(type='radio', name='nav-sdark-clr', data-bg='bg-success')
+                        span.bg-success.custom-control-indicator
+                        span.custom-control-description Success
+                p
+                    label.display-inline-block.custom-control.custom-radio
+                        input.custom-control-input(type='radio', name='nav-sdark-clr', data-bg='bg-blue')
+                        span.bg-blue.custom-control-indicator
+                        span.custom-control-description Blue
+                p
+                    label.display-inline-block.custom-control.custom-radio
+                        input.custom-control-input(type='radio', name='nav-sdark-clr', data-bg='bg-cyan')
+                        span.bg-cyan.custom-control-indicator
+                        span.custom-control-description Cyan
+                p
+                    label.display-inline-block.custom-control.custom-radio
+                        input.custom-control-input(type='radio', name='nav-sdark-clr', data-bg='bg-pink')
+                        span.bg-pink.custom-control-indicator
+                        span.custom-control-description Pink
+            #clrOpt3.tab-pane(aria-labelledby='color-opt-3')
+                .row
+                    .col-xs-6
+                        h3 Solid
+                        p
+                            label.display-inline-block.custom-control.custom-radio
+                                input.custom-control-input.default(type='radio', name='nav-dark-clr', checked='', data-bg='bg-blue-grey')
+                                span.bg-default.custom-control-indicator
+                                span.custom-control-description Default
+                        p
+                            label.display-inline-block.custom-control.custom-radio
+                                input.custom-control-input(type='radio', name='nav-dark-clr', data-bg='bg-primary')
+                                span.bg-primary.custom-control-indicator
+                                span.custom-control-description Primary
+                        p
+                            label.display-inline-block.custom-control.custom-radio
+                                input.custom-control-input(type='radio', name='nav-dark-clr', data-bg='bg-danger')
+                                span.bg-danger.custom-control-indicator
+                                span.custom-control-description Danger
+                        p
+                            label.display-inline-block.custom-control.custom-radio
+                                input.custom-control-input(type='radio', name='nav-dark-clr', data-bg='bg-success')
+                                span.bg-success.custom-control-indicator
+                                span.custom-control-description Success
+                        p
+                            label.display-inline-block.custom-control.custom-radio
+                                input.custom-control-input(type='radio', name='nav-dark-clr', data-bg='bg-blue')
+                                span.bg-blue.custom-control-indicator
+                                span.custom-control-description Blue
+                        p
+                            label.display-inline-block.custom-control.custom-radio
+                                input.custom-control-input(type='radio', name='nav-dark-clr', data-bg='bg-cyan')
+                                span.bg-cyan.custom-control-indicator
+                                span.custom-control-description Cyan
+                        p
+                            label.display-inline-block.custom-control.custom-radio
+                                input.custom-control-input(type='radio', name='nav-dark-clr', data-bg='bg-pink')
+                                span.bg-pink.custom-control-indicator
+                                span.custom-control-description Pink
+                    .col-xs-6
+                        h3 Gradient
+                        p
+                            label.display-inline-block.custom-control.custom-radio
+                                input.custom-control-input(type='radio', name='nav-dark-clr', data-bg='bg-gradient-x-grey-blue')
+                                span.bg-default.custom-control-indicator
+                                span.custom-control-description Default
+                        p
+                            label.display-inline-block.custom-control.custom-radio
+                                input.custom-control-input(type='radio', name='nav-dark-clr', data-bg='bg-gradient-x-primary')
+                                span.bg-primary.custom-control-indicator
+                                span.custom-control-description Primary
+                        p
+                            label.display-inline-block.custom-control.custom-radio
+                                input.custom-control-input(type='radio', name='nav-dark-clr', data-bg='bg-gradient-x-danger')
+                                span.bg-danger.custom-control-indicator
+                                span.custom-control-description Danger
+                        p
+                            label.display-inline-block.custom-control.custom-radio
+                                input.custom-control-input(type='radio', name='nav-dark-clr', data-bg='bg-gradient-x-success')
+                                span.bg-success.custom-control-indicator
+                                span.custom-control-description Success
+                        p
+                            label.display-inline-block.custom-control.custom-radio
+                                input.custom-control-input(type='radio', name='nav-dark-clr', data-bg='bg-gradient-x-blue')
+                                span.bg-blue.custom-control-indicator
+                                span.custom-control-description Blue
+                        p
+                            label.display-inline-block.custom-control.custom-radio
+                                input.custom-control-input(type='radio', name='nav-dark-clr', data-bg='bg-gradient-x-cyan')
+                                span.bg-cyan.custom-control-indicator
+                                span.custom-control-description Cyan
+                        p
+                            label.display-inline-block.custom-control.custom-radio
+                                input.custom-control-input(type='radio', name='nav-dark-clr', data-bg='bg-gradient-x-pink')
+                                span.bg-pink.custom-control-indicator
+                                span.custom-control-description Pink
+            #clrOpt4.tab-pane(aria-labelledby='color-opt-4')
+                p
+                    label.display-inline-block.custom-control.custom-radio
+                        input.custom-control-input.default(type='radio', name='nav-light-clr', checked='', data-bg='bg-blue-grey bg-lighten-4')
+                        span.bg-default.custom-control-indicator
+                        span.custom-control-description Default
+                p
+                    label.display-inline-block.custom-control.custom-radio
+                        input.custom-control-input(type='radio', name='nav-light-clr', data-bg='bg-primary bg-lighten-4')
+                        span.bg-primary.custom-control-indicator
+                        span.custom-control-description Primary
+                p
+                    label.display-inline-block.custom-control.custom-radio
+                        input.custom-control-input(type='radio', name='nav-light-clr', data-bg='bg-danger bg-lighten-4')
+                        span.bg-danger.custom-control-indicator
+                        span.custom-control-description Danger
+                p
+                    label.display-inline-block.custom-control.custom-radio
+                        input.custom-control-input(type='radio', name='nav-light-clr', data-bg='bg-success bg-lighten-4')
+                        span.bg-success.custom-control-indicator
+                        span.custom-control-description Success
+                p
+                    label.display-inline-block.custom-control.custom-radio
+                        input.custom-control-input(type='radio', name='nav-light-clr', data-bg='bg-blue bg-lighten-4')
+                        span.bg-blue.custom-control-indicator
+                        span.custom-control-description Blue
+                p
+                    label.display-inline-block.custom-control.custom-radio
+                        input.custom-control-input(type='radio', name='nav-light-clr', data-bg='bg-cyan bg-lighten-4')
+                        span.bg-cyan.custom-control-indicator
+                        span.custom-control-description Cyan
+                p
+                    label.display-inline-block.custom-control.custom-radio
+                        input.custom-control-input(type='radio', name='nav-light-clr', data-bg='bg-pink bg-lighten-4')
+                        span.bg-pink.custom-control-indicator
+                        span.custom-control-description Pink
+        hr
+        h5.mt-1.mb-1 Menu Color Options
+        .form-group
+            // Outline Button group
+            .btn-group.customizer-sidebar-options(role='group', aria-label='Basic example')
+                button.btn.btn-outline-primary(type='button', data-sidebar='menu-light') Light Menu
+                button.btn.btn-outline-primary(type='button', data-sidebar='menu-dark') Dark Menu

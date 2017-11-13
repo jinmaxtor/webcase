@@ -1,0 +1,247 @@
+doctype html
+//
+  WWW SQL Designer, (C) 2005-2015 Ondrej Zara, ondras@zarovi.cz
+  Version: 2.7
+  See license.txt for licencing information.
+html
+    head
+        title WWW SQL Designer
+        meta(name='viewport', content='initial-scale=1,maximum-scale=1')
+        meta(charset='utf-8')
+        // BEGIN VENDOR CSS
+        link(rel='stylesheet', type='text/css', href='/app-assets/css/bootstrap.min.css')
+        link(rel='stylesheet', type='text/css', href='/app-assets/fonts/feather/style.min.css')
+        link(rel='stylesheet', type='text/css', href='/app-assets/fonts/font-awesome/css/font-awesome.min.css')
+        link(rel='stylesheet', type='text/css', href='/app-assets/fonts/flag-icon-css/css/flag-icon.min.css')
+        link(rel='stylesheet', type='text/css', href='/app-assets/vendors/css/extensions/pace.css')
+        link(rel='stylesheet', type='text/css', href='/app-assets/vendors/css/extensions/unslider.css')
+        link(rel='stylesheet', type='text/css', href='/app-assets/vendors/css/weather-icons/climacons.min.css')
+        link(rel='stylesheet', type='text/css', href='/app-assets/fonts/meteocons/style.min.css')
+        // END VENDOR CSS
+        // BEGIN STACK CSS
+        link(rel='stylesheet', type='text/css', href='/app-assets/css/bootstrap-extended.min.css')
+        link(rel='stylesheet', type='text/css', href='/app-assets/css/app.min.css')
+        link(rel='stylesheet', type='text/css', href='/app-assets/css/colors.min.css')
+        // END STACK CSS
+        // BEGIN Page Level CSS
+        link(rel='stylesheet', type='text/css', href='/app-assets/css/core/menu/menu-types/vertical-menu-modern.css')
+        link(rel='stylesheet', type='text/css', href='/app-assets/css/core/menu/menu-types/vertical-overlay-menu.min.css')
+        link(rel='stylesheet', type='text/css', href='/app-assets/css/core/colors/palette-gradient.min.css')
+        link(rel='stylesheet', type='text/css', href='/app-assets/fonts/simple-line-icons/style.min.css')
+        link(rel='stylesheet', type='text/css', href='/app-assets/css/core/colors/palette-gradient.min.css')
+        link(rel='stylesheet', type='text/css', href='/app-assets/css/pages/timeline.min.css')
+        // END Page Level CSS
+        // BEGIN Custom CSS
+        link(rel='stylesheet', type='text/css', href='/css/style.css')
+        link(rel='stylesheet', href='/diagramador/styles/style.css', media='all')
+        //if IE 6
+          link(rel='stylesheet', type='text/css', href='/diagramador/styles/ie6.css')
+        //if IE 7
+          link(rel='stylesheet', type='text/css', href='/diagramador/styles/ie7.css')
+        link(rel='stylesheet', href='/diagramador/styles/print.css', type='text/css', media='print')
+        script(src='/diagramador/js/oz.js')
+        script(src='/diagramador/js/config.js')
+        script(src='/diagramador/js/globals.js')
+        script(src='/diagramador/js/visual.js')
+        script(src='/diagramador/js/row.js')
+        script(src='/diagramador/js/table.js')
+        script(src='/diagramador/js/relation.js')
+        script(src='/diagramador/js/key.js')
+        script(src='/diagramador/js/rubberband.js')
+        script(src='/diagramador/js/map.js')
+        script(src='/diagramador/js/toggle.js')
+        script(src='/diagramador/js/io.js')
+        script(src='/diagramador/js/tablemanager.js')
+        script(src='/diagramador/js/rowmanager.js')
+        script(src='/diagramador/js/keymanager.js')
+        script(src='/diagramador/js/window.js')
+        script(src='/diagramador/js/options.js')
+        script(src='/diagramador/js/wwwsqldesigner.js')
+    body.vertical-layout.vertical-menu-modern.2-columns.menu-expanded.fixed-navbar(data-open='click', data-menu='vertical-menu-modern', data-col='2-columns')
+        include ./layouts/navbar
+        include ./layouts/menu
+        #area
+        #controls
+            #bar
+                #toggle
+                input#saveload(type='button')
+                hr
+                input#addtable(type='button')
+                input#edittable(type='button')
+                input#tablekeys(type='button')
+                input#removetable(type='button')
+                input#aligntables(type='button')
+                input#cleartables(type='button')
+                hr
+                input#addrow(type='button')
+                input#editrow(type='button')
+                input#uprow.small(type='button')
+                input#downrow.small(type='button')
+                input#foreigncreate(type='button')
+                input#foreignconnect(type='button')
+                input#foreigndisconnect(type='button')
+                input#removerow(type='button')
+                hr
+                input#options(type='button')
+                a(href='https://github.com/ondras/wwwsqldesigner/wiki', target='_blank')
+                    input#docs(type='button', value='')
+            #rubberband
+            #minimap
+            #background.modal.fade.text-xs-left.in
+            #window.modal-content
+                #windowtitle.modal-title
+                    img#throbber(src='/diagramador/images/throbber.gif', alt='', title='')
+                #windowcontent
+                input#windowok(type='button')
+                input#windowcancel(type='button')
+        // #controls
+        #opts
+            table
+                tbody
+                    tr
+                        td
+                            | *
+                            label#language(for='optionlocale')
+                        td
+                            select#optionlocale
+                                option
+                    tr
+                        td
+                            | *
+                            label#db(for='optiondb')
+                        td
+                            select#optiondb
+                                option
+                    tr
+                        td
+                            label#snap(for='optionsnap')
+                        td
+                            input#optionsnap(type='text', size='4')
+                            span#optionsnapnotice.small
+                    tr
+                        td
+                            label#pattern(for='optionpattern')
+                        td
+                            input#optionpattern(type='text', size='6')
+                            span#optionpatternnotice.small
+                    tr
+                        td
+                            label#hide(for='optionhide')
+                        td
+                            input#optionhide(type='checkbox')
+                    tr
+                        td
+                            | *
+                            label#vector(for='optionvector')
+                        td
+                            input#optionvector(type='checkbox')
+                    tr
+                        td
+                            | *
+                            label#showsize(for='optionshowsize')
+                        td
+                            input#optionshowsize(type='checkbox')
+                    tr
+                        td
+                            | *
+                            label#showtype(for='optionshowtype')
+                        td
+                            input#optionshowtype(type='checkbox')
+            hr
+            | 		*
+            span#optionsnotice.small
+        #io
+            table
+                tbody
+                    tr
+                        td(style='width:60%')
+                            fieldset
+                                legend#client
+                                #singlerow
+                                    input#clientsave(type='button')
+                                    input#clientload(type='button')
+                                #singlerow
+                                    input#clientlocalsave(type='button')
+                                    input#clientlocalload(type='button')
+                                    input#clientlocallist(type='button')
+                                #singlerow
+                                    input#dropboxsave(type='button')
+                                    // may get hidden by dropBoxInit()
+                                    input#dropboxload(type='button')
+                                    // may get hidden by dropBoxInit()
+                                    input#dropboxlist(type='button')
+                                    // may get hidden by dropBoxInit()
+                                hr
+                                input#clientsql(type='button')
+                        td(style='width:40%')
+                            fieldset
+                                legend#server
+                                label#backendlabel(for='backend')
+                                select#backend
+                                    option
+                                hr
+                                input#serversave(type='button')
+                                input#quicksave(type='button')
+                                input#serverload(type='button')
+                                input#serverlist(type='button')
+                                input#serverimport(type='button')
+                    tr
+                        td(colspan='2')
+                            fieldset
+                                legend#output
+                                textarea#textarea(rows='1', cols='1')
+                                // modified by javascript later
+        #keys
+            fieldset
+                legend#keyslistlabel
+                select#keyslist
+                    option
+                input#keyadd(type='button')
+                input#keyremove(type='button')
+            fieldset
+                legend#keyedit
+                table
+                    tbody
+                        tr
+                            td
+                                label#keytypelabel(for='keytype')
+                                select#keytype
+                                    option
+                            td
+                            td
+                                label#keynamelabel(for='keyname')
+                                input#keyname(type='text', size='10')
+                        tr
+                            td(colspan='3')
+                                hr
+                        tr
+                            td
+                                label#keyfieldslabel(for='keyfields')
+                                br
+                                select#keyfields(size='5', multiple='multiple')
+                                    option
+                            td
+                                input#keyleft(type='button', value='<<')
+                                br
+                                input#keyright(type='button', value='>>')
+                                br
+                            td
+                                label#keyavaillabel(for='keyavail')
+                                br
+                                select#keyavail(size='5', multiple='multiple')
+                                    option
+        #table
+            table
+                tbody
+                    tr
+                        td
+                            label#tablenamelabel(for='tablename')
+                        td
+                            input#tablename(type='text')
+                    tr
+                        td
+                            label#tablecommentlabel(for='tablecomment')
+                        td
+                            textarea#tablecomment(rows='5', cols='40')
+        script(type='text/javascript').
+            var d = new SQL.Designer();

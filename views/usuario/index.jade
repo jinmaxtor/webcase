@@ -1,0 +1,261 @@
+extends ../layouts/app
+block estilos
+    link(rel='stylesheet', href='/diagramador/styles/style.css', media='all')
+    link(rel='stylesheet', type='text/css', href='/diagramador/styles/ie6.css')
+    link(rel='stylesheet', type='text/css', href='/diagramador/styles/ie7.css')
+    link(rel='stylesheet', href='/diagramador/styles/print.css', type='text/css', media='print')
+
+block scripts
+    script(src='/diagramador/js/oz.js')
+    script(src='/diagramador/js/config.js')
+    script(src='/diagramador/js/globals.js')
+    script(src='/diagramador/js/visual.js')
+    script(src='/diagramador/js/row.js')
+    script(src='/diagramador/js/table.js')
+    script(src='/diagramador/js/relation.js')
+    script(src='/diagramador/js/key.js')
+    script(src='/diagramador/js/rubberband.js')
+    script(src='/diagramador/js/map.js')
+    script(src='/diagramador/js/toggle.js')
+    script(src='/diagramador/js/io.js')
+    script(src='/diagramador/js/tablemanager.js')
+    script(src='/diagramador/js/rowmanager.js')
+    script(src='/diagramador/js/keymanager.js')
+    script(src='/diagramador/js/window.js')
+    script(src='/diagramador/js/options.js')
+    script(src='/diagramador/js/wwwsqldesigner.js')
+block diagpanel
+    #controls
+        #bar
+            #toggle
+            input#saveload(type='button')
+            hr
+            input#addtable(type='button')
+            input#edittable(type='button')
+            input#tablekeys(type='button')
+            input#removetable(type='button')
+            input#aligntables(type='button')
+            input#cleartables(type='button')
+            hr
+            input#addrow(type='button')
+            input#editrow(type='button')
+            input#uprow.small(type='button')
+            input#downrow.small(type='button')
+            input#foreigncreate(type='button')
+            input#foreignconnect(type='button')
+            input#foreigndisconnect(type='button')
+            input#removerow(type='button')
+            hr
+            input#options(type='button')
+            a(href='https://github.com/ondras/wwwsqldesigner/wiki', target='_blank')
+                input#docs(type='button', value='')
+        #rubberband
+        #minimap
+        #background
+        #window
+            #windowtitle
+                img#throbber(src='/diagramador/images/throbber.gif', alt='', title='')
+            #windowcontent
+            input#windowok(type='button')
+            input#windowcancel(type='button')
+    // #controls
+    #opts
+        table
+            tbody
+                tr
+                    td
+                        | *
+                        label#language(for='optionlocale')
+                    td
+                        select#optionlocale
+                            option
+                tr
+                    td
+                        | *
+                        label#db(for='optiondb')
+                    td
+                        select#optiondb
+                            option
+                tr
+                    td
+                        label#snap(for='optionsnap')
+                    td
+                        input#optionsnap(type='text', size='4')
+                        span#optionsnapnotice.small
+                tr
+                    td
+                        label#pattern(for='optionpattern')
+                    td
+                        input#optionpattern(type='text', size='6')
+                        span#optionpatternnotice.small
+                tr
+                    td
+                        label#hide(for='optionhide')
+                    td
+                        input#optionhide(type='checkbox')
+                tr
+                    td
+                        | *
+                        label#vector(for='optionvector')
+                    td
+                        input#optionvector(type='checkbox')
+                tr
+                    td
+                        | *
+                        label#showsize(for='optionshowsize')
+                    td
+                        input#optionshowsize(type='checkbox')
+                tr
+                    td
+                        | *
+                        label#showtype(for='optionshowtype')
+                    td
+                        input#optionshowtype(type='checkbox')
+        hr
+        |        *
+        span#optionsnotice.small
+    #io
+        table
+            tbody
+                tr
+                    td(style='width:60%')
+                        fieldset
+                            legend#client
+                            #singlerow
+                                input#clientsave(type='button')
+                                input#clientload(type='button')
+                            #singlerow
+                                input#clientlocalsave(type='button')
+                                input#clientlocalload(type='button')
+                                input#clientlocallist(type='button')
+                            #singlerow
+                                input#dropboxsave(type='button')
+                                // may get hidden by dropBoxInit()
+                                input#dropboxload(type='button')
+                                // may get hidden by dropBoxInit()
+                                input#dropboxlist(type='button')
+                                // may get hidden by dropBoxInit()
+                            hr
+                            input#clientsql(type='button')
+                    td(style='width:40%')
+                        fieldset
+                            legend#server
+                            label#backendlabel(for='backend')
+                            select#backend
+                                option
+                            hr
+                            input#serversave(type='button')
+                            input#quicksave(type='button')
+                            input#serverload(type='button')
+                            input#serverlist(type='button')
+                            input#serverimport(type='button')
+                tr
+                    td(colspan='2')
+                        fieldset
+                            legend#output
+                            textarea#textarea(rows='1', cols='1')
+                            // modified by javascript later
+    #keys
+        fieldset
+            legend#keyslistlabel
+            select#keyslist
+                option
+            input#keyadd(type='button')
+            input#keyremove(type='button')
+        fieldset
+            legend#keyedit
+            table
+                tbody
+                    tr
+                        td
+                            label#keytypelabel(for='keytype')
+                            select#keytype
+                                option
+                        td
+                        td
+                            label#keynamelabel(for='keyname')
+                            input#keyname(type='text', size='10')
+                    tr
+                        td(colspan='3')
+                            hr
+                    tr
+                        td
+                            label#keyfieldslabel(for='keyfields')
+                            br
+                            select#keyfields(size='5', multiple='multiple')
+                                option
+                        td
+                            input#keyleft(type='button', value='<<')
+                            br
+                            input#keyright(type='button', value='>>')
+                            br
+                        td
+                            label#keyavaillabel(for='keyavail')
+                            br
+                            select#keyavail(size='5', multiple='multiple')
+                                option
+    #table
+        table
+            tbody
+                tr
+                    td
+                        label#tablenamelabel(for='tablename')
+                    td
+                        input#tablename(type='text')
+                tr
+                    td
+                        label#tablecommentlabel(for='tablecomment')
+                    td
+                        textarea#tablecomment(rows='5', cols='40')
+block contenido
+    section#sqldesigner.card
+        .card-header
+            h4.card-title SQL Designer
+            a.heading-elements-toggle
+                i.fa.fa-ellipsis-v.font-medium-3
+            .heading-elements
+                ul.list-inline.mb-0
+                    li
+                        a(data-action='collapse')
+                            i.ft-minus
+                    li
+                        a(data-action='reload')
+                            i.ft-rotate-cw
+                    li
+                        a(data-action='expand')
+                            i.ft-maximize
+                    li
+                        a(data-action='close')
+                            i.ft-x
+        .card-body.collapse.in
+            .card-block
+                .card-text
+                    .min-scroll-length.scroll-example.height-600
+                        #area
+            // / Image grid
+    section#chat.card
+        .card-header
+            h4.card-title Chat
+            a.heading-elements-toggle
+                i.fa.fa-ellipsis-v.font-medium-3
+            .heading-elements
+                ul.list-inline.mb-0
+                    li
+                        a(data-action='collapse')
+                            i.ft-minus
+                    li
+                        a(data-action='reload')
+                            i.ft-rotate-cw
+                    li
+                        a(data-action='expand')
+                            i.ft-maximize
+                    li
+                        a(data-action='close')
+                            i.ft-x
+        .card-body.collapse.in
+            .card-block
+
+            // / Image grid
+block diagscript
+    script(type='text/javascript').
+        var d = new SQL.Designer();

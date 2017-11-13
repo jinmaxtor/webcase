@@ -50,13 +50,13 @@ html.loading(lang='es', data-textdirection='ltr')
                                     span Inicie sesión en WebCASE
                             .card-body.collapse.in
                                 .card-block
-                                    form.form-horizontal.form-simple(action='https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/html/ltr/vertical-modern-menu-template/index.html', novalidate='')
+                                    form.form-horizontal.form-simple(action='/login', method='post')
                                         fieldset.form-group.position-relative.has-icon-left.mb-0
-                                            input#user-name.form-control.form-control-lg.input-lg(type='text', placeholder='Nombre de usuario', required='')
+                                            input#user-name.form-control.form-control-lg.input-lg(type='email', name='email', placeholder='Nombre de usuario', required='')
                                             .form-control-position
                                                 i.ft-user
                                         fieldset.form-group.position-relative.has-icon-left
-                                            input#user-password.form-control.form-control-lg.input-lg(type='password', placeholder='Contraseña', required='')
+                                            input#user-password.form-control.form-control-lg.input-lg(type='password', name='password', placeholder='Contraseña', required='')
                                             .form-control-position
                                                 i.fa.fa-key
                                         fieldset.form-group.row

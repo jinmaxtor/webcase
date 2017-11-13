@@ -4,6 +4,9 @@
 
 module.exports = {
     index: function (request, response, next) {
-        response.render('home');
+        response.render('home', {
+            isAuthenticated: request.isAuthenticated(),
+            usuario: request.usuario
+        });
     }
 };
