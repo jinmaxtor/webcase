@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <datatypes db="mysql">
-	<group label="Numeric" color="rgb(238,238,170)">
+	<group label="Numeric" color="#FEFAF7">
 		<type label="Integer" length="0" sql="INTEGER" quote="" />
 	 	<type label="TINYINT" length="0" sql="TINYINT" quote="" />
 	 	<type label="SMALLINT" length="0" sql="SMALLINT" quote="" />
@@ -12,7 +12,7 @@
 		<type label="Double precision" length="0" sql="DOUBLE" re="DOUBLE" quote="" />
 	</group>
 
-	<group label="Character" color="rgb(255,200,200)">
+	<group label="Character" color="#FEFAF7">
 		<type label="Char" length="1" sql="CHAR" quote="'"/>
 		<type label="Varchar" length="1" sql="VARCHAR"  quote="'"/>
 		<type label="Text" length="0" sql="MEDIUMTEXT" re="TEXT" quote="'"/>
@@ -21,7 +21,7 @@
 		<type label="BLOB" length="0" sql="BLOB" re="BLOB" quote="'"/>
 	</group>
 
-	<group label="Date &amp; Time" color="rgb(200,255,200)">
+	<group label="Date &amp; Time" color="#FEFAF7">
 		<type label="Date" length="0" sql="DATE" quote="'" />
 		<type label="Time" length="0" sql="TIME" quote="'" />
 		<type label="Datetime" length="0" sql="DATETIME" quote="'" />
@@ -29,7 +29,7 @@
 		<type label="Timestamp" length="0" sql="TIMESTAMP" quote="'" />
 	</group>
 	
-	<group label="Miscellaneous" color="rgb(200,200,255)">
+	<group label="Miscellaneous" color="#FEFAF7">
 		<type label="ENUM" length="1" sql="ENUM" quote="" />
 		<type label="SET" length="1" sql="SET" quote="" />
 		<type label="Bit" length="0" sql="bit" quote="" />
