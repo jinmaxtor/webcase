@@ -7,7 +7,7 @@ var bcrypt = require('bcryptjs');
 
 module.exports = {
     login: function (request, response, next) {
-        response.render('usuario/login', {message: request.flash('info')});
+        response.render('usuario/login', {message: request.flash('info'), authmessage: request.flash('authmessage')});
     },
 
     index: function (request, response, next) {
@@ -34,6 +34,11 @@ module.exports = {
         });
 
         request.flash('info', 'Se ha registrado correctamente, ya pueede iniciar sesion');
+        response.redirect('/login');
+    },
+
+    logout: function(request, response, next) {
+        request.logout();
         response.redirect('/login');
     }
 };

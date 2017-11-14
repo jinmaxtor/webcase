@@ -4,9 +4,13 @@
 
 module.exports = {
     index: function (request, response, next) {
-        response.render('home', {
+        response.render('home');
+    },
+
+    welcome: function (request, response, next) {
+        response.render('welcome', {
             isAuthenticated: request.isAuthenticated(),
-            usuario: request.usuario
+            usuario: request.user
         });
     }
 };

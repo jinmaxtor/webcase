@@ -1,0 +1,4 @@
+extends ./layouts/app
+block contenido
+    if isAuthenticated
+        p= 'Bienvenido ' + usuario.nombre

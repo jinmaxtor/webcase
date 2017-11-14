@@ -35,7 +35,7 @@ module.exports = function (passport) {
                 }
             }
 
-            return done(null, false, request.flash('loginmessage', 'Email o Password incorrecto!'));
+            return done(null, false, request.flash('authmessage', 'Email o Password incorrecto!'));
         });
         console.log(email);
         return;
