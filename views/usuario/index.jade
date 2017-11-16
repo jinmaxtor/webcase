@@ -254,7 +254,16 @@ block contenido
                             i.ft-x
         .card-body.collapse.in
             .card-block
-
+                #seccionUsuarios.col-xl-4
+                    h4 Usuarios
+                    #listaUsuarios
+                #seccionChat.col-xl-8.chat-app-form
+                    #ventanaChat
+                    form#formularioChat.chat-app-input
+                        .form-group.position-relative.has-icon-left.col-xs-10.m-0
+                            input#mensaje.form-control
+                        span.form-group.position-relative.has-icon-left.col-xs-2.m-0
+                            button.btn.btn-primary(type='button') Enviar
             // / Image grid
 block diagscript
     script(type='text/javascript').
