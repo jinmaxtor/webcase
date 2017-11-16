@@ -8,6 +8,8 @@ var app = require('../app');
 var debug = require('debug')('webcase:server');
 var http = require('http');
 
+
+
 /**
  * Get port from environment and store in Express.
  */
@@ -22,6 +24,8 @@ app.set('port', port);
 
 var server = http.createServer(app);
 
+
+
 /**
  * Listen on provided port, on all network interfaces.
  */
@@ -29,6 +33,7 @@ var server = http.createServer(app);
 server.listen(port);
 server.on('error', onError);
 server.on('listening', onListening);
+
 
 /**
  * Normalize a port into a number, string, or false.
@@ -89,3 +94,39 @@ function onListening() {
     : 'port ' + addr.port;
   debug('Listening on ' + bind);
 }
+
+
+// mi codigo--------------------------------------------
+var usuarios = [];
+// importo la libreria socket.io
+var io = require('socket.io')(server);
+io.on('connection', function (socket) {
+    socket.on('usuarioConectado', function (usuario, callback) {
+        if (usuarios.indexOf(usuario) != -1) {
+            callback(false);
+        } else {
+            callback(true);
+            socket.usuario = usuario;
+            usuarios.push(usuario);
+            actualizarUsuarios();
+            io.emit('mensaje', {mensaje: 'se ha conectado', usuario: socket.usuario});
+        }
+    });
+
+    socket.on('nuevo mensaje', function (mensaje) {
+        io.emit('mensaje', {mensaje: mensaje, usuario: socket.usuario});
+    });
+
+    socket.on('disconnect', function (data) {
+        usuarios.splice(usuarios.indexOf(socket.usuario), 1);
+        io.emit('mensaje', {mensaje: 'se ha desconectado', usuario: socket.usuario});
+    });
+
+    socket.on('modeloModificado', function (xml) {
+        io.emit('actualizado', xml);
+    });
+
+    function actualizarUsuarios() {
+        io.emit('actualizarUsuarios', usuarios);
+    };
+});

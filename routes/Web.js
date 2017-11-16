@@ -30,8 +30,18 @@ router.get('/prueba', function (request, response, next) {
     response.render('diagramador');
 });
 
-router.get('/user', function (request, response, next) {
-    response.render('usuario/index');
-})
+router.get('/proyecto', AuthMiddleware.estaLogueado,function (request, response, next) {
+    response.render('usuario/index', {
+        isAuthenticated: request.isAuthenticated(),
+        usuario: request.user
+    });
+});
+
+router.get('/diagrama', AuthMiddleware.estaLogueado,function (request, response, next) {
+    response.render('diagramador', {
+        isAuthenticated: request.isAuthenticated(),
+        usuario: request.user
+    });
+});
 
 module.exports = router;

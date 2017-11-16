@@ -57,9 +57,9 @@ html
         script(src='/diagramador/js/window.js')
         script(src='/diagramador/js/options.js')
         script(src='/diagramador/js/wwwsqldesigner.js')
-    body.vertical-layout.vertical-menu-modern.2-columns.menu-expanded.fixed-navbar(data-open='click', data-menu='vertical-menu-modern', data-col='2-columns')
-        include ./layouts/navbar
-        include ./layouts/menu
+    body
+        //include ./layouts/navbar
+        //include ./layouts/menu
         #area
         #controls
             #bar
@@ -245,3 +245,4 @@ html
                             textarea#tablecomment(rows='5', cols='40')
         script(type='text/javascript').
             var d = new SQL.Designer();
+            alert(d.toXML());

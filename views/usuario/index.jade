@@ -210,7 +210,7 @@ block diagpanel
 block contenido
     section#sqldesigner.card
         .card-header
-            h4.card-title SQL Designer
+            h4.card-title Diseñe su modelo de negocio
             a.heading-elements-toggle
                 i.fa.fa-ellipsis-v.font-medium-3
             .heading-elements
@@ -255,7 +255,7 @@ block contenido
         .card-body.collapse.in
             .card-block
                 #seccionUsuarios.col-xl-4
-                    h4 Usuarios
+                    h4 Usuarios conectados
                     #listaUsuarios
                 #seccionChat.col-xl-8.chat-app-form
                     #ventanaChat
@@ -263,8 +263,64 @@ block contenido
                         .form-group.position-relative.has-icon-left.col-xs-10.m-0
                             input#mensaje.form-control
                         span.form-group.position-relative.has-icon-left.col-xs-2.m-0
-                            button.btn.btn-primary(type='button') Enviar
+                            button.btn.btn-primary(type='submit') Enviar
             // / Image grid
-block diagscript
+
+block chatscript
+    script(src='/socket.io/socket.io.js')
     script(type='text/javascript').
         var d = new SQL.Designer();
+        $(function () {
+            var socket = io.connect();
+            var formularioChat = $('#formularioChat');
+
+            var usuario = $('#nombre').text();
+            var listaUsuarios = $('#listaUsuarios');
+
+            var mensaje = $('#mensaje');
+            var chat = $('#ventanaChat');
+
+
+
+
+
+            socket.emit('usuarioConectado', usuario, function (data) {
+                if (data) {
+                    console.log('se metio en la lista');
+                } else {
+                    console.log('ya esta en la lista');
+                }
+            });
+
+
+            socket.on('actualizarUsuarios', function (usuarios) {
+                var html = '';
+
+                usuarios.forEach(function (usuario) {
+                    html += usuario + '<br/>';
+                });
+                listaUsuarios.html(html);
+            });
+
+            formularioChat.submit(function (evento) {
+                evento.preventDefault();
+                socket.emit('nuevo mensaje', mensaje.val());
+                mensaje.val('');
+            });
+
+
+            socket.on('mensaje', function (data) {
+                chat.append('<strong>' + data.usuario + '<strong/> - ' +
+                data.mensaje + '<br/>');
+            });
+
+            /*
+            console.log(d.toXML());
+
+            socket.emit('modeloModificado', xml);
+            socket.on('actualizado', function (xml) {
+                d.fromXML(xml);
+            });
+            */
+
+        });
